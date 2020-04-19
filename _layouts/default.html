@@ -3,30 +3,27 @@
   <head>
     <title>{{ page.title }}</title>
     <!-- link to main stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/cv">CV</a></li>
-        <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
-    <div class="container">
+    <div id="container">
+      <div id="hero">
+        <h1>April Polubiec</h1>
+        <!-- <h5>[eɪprəl pəlubiek]</h5> -->
+        <h2>Software Developer</h2>
+      </div>
       {{ content }}
+      <footer>
+        <ul>
+          <li><a href="mailto:aprilpolubiec@gmail.com">email</a></li>
+          <li>
+            <a href="https://github.com/aprilpolubiec"
+              >github.com/aprilpolubiec</a
+            >
+          </li>
+        </ul>
+      </footer>
     </div>
-    <!-- /.container -->
-    <footer>
-      <ul>
-        <li><a href="mailto:aprilpolubiec@gmail.com">email</a></li>
-        <li>
-          <a href="https://github.com/aprilpolubiec"
-            >github.com/aprilpolubiec</a
-          >
-        </li>
-      </ul>
-    </footer>
   </body>
 </html>
