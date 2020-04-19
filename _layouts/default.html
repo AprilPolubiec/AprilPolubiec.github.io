@@ -3,15 +3,23 @@
   <head>
     <title>{{ page.title }}</title>
     <!-- link to main stylesheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/main.js"></script>
   </head>
   <body>
     <div id="container">
       <div id="hero">
-        <h1>April Polubiec</h1>
-        <!-- <h5>[eɪprəl pəlubiek]</h5> -->
-        <h2>Software Developer</h2>
+        <div id="hero-text">
+          <div id="i-dot"></div>
+          <h1>April Polubiec</h1>
+          <h5 id="ipa-text">[eɪprəl pəlubiek]</h5>
+          <h2>Software Developer</h2>
+        </div>
       </div>
       {{ content }}
       <footer>
