@@ -13,12 +13,30 @@ $(document).ready(function () {
   )
 
   //Create projects
-  var projects = [1, 2, 3, 4, 5, 6]
+  var projects = {
+    asciiart: {
+      title: 'ASCII Art',
+      url: 'https://github.com/AprilPolubiec/asciiart'
+    },
+  }
   var projectContainer = $('#project-container')
 
-  projects.forEach(function renderProject(project) {
-    console.log(project)
-    var projectEl = $('<div></div>').addClass('project')
+  function displayTitle() {
+    this.children[1].style.visibility = 'visible'
+  }
+
+  function hideTitle() {
+    this.children[1].style.visibility = 'hidden'
+  }
+
+  Object.entries(projects).forEach(function renderProject([project, details]) {
+    var projectEl = $(`<a href=${details.url}></a>`).addClass('project')
+    var imgEl = $('<img></img>')
+    imgEl.attr('src', `../img/${project}.png`)
+    var titleEl = $('<div></div>').text(details.title)
+    var url = $(`<a href=${details.url}></a>`)
+    projectEl.append(imgEl, titleEl)
     projectContainer.append(projectEl)
+    projectEl.hover(displayTitle, hideTitle)
   })
 })
