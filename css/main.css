@@ -94,8 +94,7 @@ h2 {
   height: 300px;
 }
 
-.project img:hover,
-.project div:hover img {
+.project:hover img {
   filter: brightness(40%);
   cursor: pointer;
 }
@@ -106,4 +105,5 @@ h2 {
   top: 40%;
   font-size: 40px;
   color: #fff;
+  font-family: 'Roboto', 'sans-serif';
 }

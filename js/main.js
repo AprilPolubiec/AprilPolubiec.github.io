@@ -16,13 +16,18 @@ $(document).ready(function () {
   var projects = {
     asciiart: {
       title: 'ASCII Art',
-      url: 'https://github.com/AprilPolubiec/asciiart'
+      url: 'https://github.com/AprilPolubiec/asciiart',
+    },
+    gameoflife: {
+      title: 'Game of Life',
+      url: 'https://github.com/AprilPolubiec/GameOfLife',
     },
   }
   var projectContainer = $('#project-container')
 
   function displayTitle() {
     this.children[1].style.visibility = 'visible'
+    // this.style.filter = 'brightness(40%)'
   }
 
   function hideTitle() {
