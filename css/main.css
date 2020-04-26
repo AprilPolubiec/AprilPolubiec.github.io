@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;500;900&family=Squada+One&display=swap');
 
 :root {
   --dark-blue: #0b182a;
@@ -21,7 +21,9 @@ a {
 
 #container {
   width: 100%;
-  background-color: #fff;
+  display: flex;
+  background-color: #000;
+  flex-direction: column;
 }
 
 #hero {
@@ -63,9 +65,8 @@ a {
 }
 
 #i-dot {
-  width: 5px;
-  height: 5px;
-  /* border: 1px solid black; */
+  width: 16px;
+  height: 16px;
   position: absolute;
   left: 379px;
   bottom: 108px;
@@ -76,30 +77,35 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: 'Roboto', 'sans-serif';
+  font-family: 'Squada One', sans-serif;
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 90px;
 }
 
 h2 {
   font-size: 40px;
 }
 
-#project-container {
-  width: 75%;
-  margin: 0 auto;
+#project-container,
+#resume-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 90%;
-  /* -webkit-box-shadow: 0px 0px 7px -1px rgba(0, 0, 0, 0.37);
-  -moz-box-shadow: 0px 0px 7px -1px rgba(0, 0, 0, 0.37);
-  box-shadow: 0px 0px 7px -1px rgba(0, 0, 0, 0.37); */
-  background-color: #fff;
+  position: relative;
+  padding: 50px 128px;
 }
 
+.section-title {
+  top: 180px;
+  position: absolute;
+  left: -29px;
+  color: #fff;
+  transform: rotate(-90deg);
+}
+
+/*PROJECT CONTAINER*/
 .project {
   border-radius: 20px;
   height: 300px;
@@ -139,4 +145,33 @@ h2 {
   align-items: flex-end;
   padding: 0 12px 0 12px;
   justify-content: flex-end;
+}
+
+/*RESUME CONTAINER*/
+
+#resume-container {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-section {
+  width: 100%;
+}
+
+.skill-section .list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.skill-section .list * {
+  font-size: 26px;
+  margin: 10px 18px;
+}
+
+.skill-section h1 {
+  font-size: 60px;
 }
