@@ -22,6 +22,10 @@ $(document).ready(function () {
       title: 'Game of Life',
       url: 'https://github.com/AprilPolubiec/GameOfLife',
     },
+    marbl: {
+      title: 'Marbl Furniture',
+      url: 'https://marbl-furniture.firebaseapp.com/'
+    }
   }
   var projectContainer = $('#project-container')
 
