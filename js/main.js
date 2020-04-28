@@ -27,7 +27,7 @@ $(document).ready(function () {
       url: 'https://marbl-furniture.firebaseapp.com/',
     },
   }
-  var projectContainer = $('#project-container')
+  var projectContainer = $('#projects')
   function displayTitle() {
     this.children[1].style.visibility = 'visible'
     // this.style.filter = 'brightness(40%)'
@@ -101,7 +101,7 @@ $(document).ready(function () {
 
   Object.entries(skills).forEach(function renderSkills([key, value]) {
     var skillSection = $('<div></div>').addClass('skill-section')
-    var titleEl = $(`<h1>${skillTitles[key]}</h1>`)
+    var titleEl = $(`<h2>${skillTitles[key]}</h2>`)
     var listEl = $(`<div></div>`).addClass('list')
     var listItems = value.map(function (item) {
       return $(`<div>${item.name}</div>`)

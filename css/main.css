@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;500;900&family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;500;900&display=swap');
 
 :root {
-  --dark-blue: #0b182a;
+  --offWhite: #fff3fb;
+  --accent: #d90368;
+  --opaqueBlack: rgb(0, 0, 0, 0.4);
 }
 
 * {
@@ -10,45 +12,75 @@
 
 html,
 body {
-  height: 100%;
   font-family: 'Roboto', 'sans-serif';
+}
+
+button {
+  outline: none;
+  border: none;
 }
 
 a {
   text-decoration: none;
   color: inherit;
 }
-
-#container {
-  width: 100%;
-  display: flex;
-  background-color: #000;
-  flex-direction: column;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
 }
 
-#hero {
-  width: 100%;
-  height: 350px;
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+#container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
-  background-image: url('../img/portfolio.png');
-  background-position: center;
+  background-color: var(--offWhite);
+}
+
+/* HERO */
+#hero {
+  width: 17rem;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../img/palm.png);
+  background-position: top;
   background-repeat: no-repeat;
+  position: fixed;
   background-size: cover;
-  padding-top: 30px;
-  position: relative;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 #hero-text {
-  width: 500px;
+  padding: 0 1rem;
   position: relative;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   color: #fff;
+  text-align: center;
+  height: 15rem;
+}
+
+#hero-text h1 {
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 0.5rem;
 }
 
 #hero-text h5 {
@@ -58,10 +90,14 @@ a {
   visibility: hidden;
 }
 
-#hero-text + div {
-  position: absolute;
+#headshot img {
+  width: 100%;
+}
+
+#socials {
+  /* position: absolute;
   bottom: 0;
-  right: 0;
+  right: 0; */
 }
 
 #i-dot {
@@ -72,45 +108,53 @@ a {
   bottom: 108px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: 'Squada One', sans-serif;
+#headshot {
+  padding: 1rem;
 }
 
-h1 {
-  font-size: 90px;
+button#contact {
+  background-color: rgb(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 13px;
+  border: 7px double #fff;
+  border-radius: 15px;
+  font-weight: 200;
 }
 
-h2 {
-  font-size: 40px;
+/* MAIN */
+
+#main {
+  margin-left: 17rem;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 10rem;
 }
 
 #project-container,
 #resume-container {
+  padding: 50px 45px;
+}
+
+#project-container h1,
+#resume-container h1 {
+  align-self: flex-start;
+}
+
+#projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   position: relative;
-  padding: 50px 128px;
-}
-
-.section-title {
-  top: 180px;
-  position: absolute;
-  left: -29px;
-  color: #fff;
-  transform: rotate(-90deg);
+  border-top: 1px solid var(--accent);
+  z-index: 1;
 }
 
 /*PROJECT CONTAINER*/
 .project {
-  border-radius: 20px;
   height: 300px;
   width: 300px;
-  margin: 2rem;
+  margin: 0.5rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -150,28 +194,37 @@ h2 {
 /*RESUME CONTAINER*/
 
 #resume-container {
-  background-color: #000;
-  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .skill-section {
-  width: 100%;
+  width: 646px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--accent);
 }
 
 .skill-section .list {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
+  height: 10rem;
+  width: 23rem;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .skill-section .list * {
-  font-size: 26px;
   margin: 10px 18px;
 }
 
-.skill-section h1 {
-  font-size: 60px;
+#bg-headshot img {
+  width: 300px;
+  position: absolute;
+  bottom: 28px;
+  right: -47px;
+  opacity: 0.2;
 }
