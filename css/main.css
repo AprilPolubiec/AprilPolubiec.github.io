@@ -38,17 +38,19 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 #container {
   display: flex;
-  flex-direction: column;
   background-color: var(--offWhite);
+  overflow: hidden;
+  height: 100vh;
+  justify-content: space-between;
 }
 
 /* HERO */
@@ -59,11 +61,10 @@ h3 {
   background-image: url(../img/palm.png);
   background-position: top;
   background-repeat: no-repeat;
-  position: fixed;
+  /* position: fixed; */
   background-size: cover;
-  height: 100%;
+  /* height: 100%; */
   align-items: center;
-  justify-content: center;
 }
 
 #hero-text {
@@ -79,7 +80,6 @@ h3 {
 }
 
 #hero-text h1 {
-  border-bottom: 1px solid var(--accent);
   padding-bottom: 0.5rem;
 }
 
@@ -131,9 +131,12 @@ button#contact {
   padding-bottom: 10rem;
 }
 
-#project-container,
 #resume-container {
-  padding: 50px 45px;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 #project-container h1,
@@ -141,13 +144,11 @@ button#contact {
   align-self: flex-start;
 }
 
-#projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+#project-container {
+  overflow: scroll;
   position: relative;
-  border-top: 1px solid var(--accent);
   z-index: 1;
+  padding: 0;
 }
 
 /*PROJECT CONTAINER*/
@@ -193,18 +194,11 @@ button#contact {
 
 /*RESUME CONTAINER*/
 
-#resume-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .skill-section {
-  width: 646px;
   display: flex;
-  justify-content: space-between;
   padding-top: 0.5rem;
   border-top: 1px solid var(--accent);
+  width: 590px;
 }
 
 .skill-section .list {
@@ -221,10 +215,70 @@ button#contact {
   margin: 10px 18px;
 }
 
+.skill-section h2 {
+  width: 172px;
+}
+
 #bg-headshot img {
   width: 300px;
   position: absolute;
   bottom: 28px;
   right: -47px;
   opacity: 0.2;
+}
+
+@media (max-width: 1024px) {
+  #hero {
+    width: 13rem;
+  }
+  .project {
+    width: 200px;
+    height: 200px;
+    margin: 0.5rem auto;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  h1 {
+    font-size: 2rem;
+  }
+  #container {
+    flex-direction: column;
+  }
+  #hero {
+    width: 100%;
+    height: 7rem;
+  }
+  #project-container {
+    overflow-x: scroll;
+  }
+  #resume-container {
+    padding: 0;
+    margin: 0 auto;
+    width: 500px;
+  }
+  .skill-section {
+    width: unset;
+    flex-direction: column;
+    width: 100%;
+  }
+  .skill-section .list {
+    width: unset;
+    height: unset;
+    flex-direction: row;
+  }
+  .skill-section .list * {
+    margin: 1px 5px;
+  }
+  .project {
+    width: 200px;
+    height: 200px;
+    margin: 0.5rem auto;
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  #resume-container{
+    width: unset;
+  }
 }

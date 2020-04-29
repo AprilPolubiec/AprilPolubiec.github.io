@@ -4,6 +4,7 @@
     <title>{{ page.title }}</title>
     <!-- link to main stylesheet -->
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../js/main.js"></script>
   </head>
@@ -15,9 +16,6 @@
           <h1>April Polubiec</h1>
           <h5 id="ipa-text">[eɪprəl pəlubiek]</h5>
           <h3>Software Developer</h3>
-        </div>
-        <div id='headshot'>
-          <img src="../img/headshot1.png" alt="headshot"></img>
         </div>
         <div id="socials">
           <a href="https://github.com/aprilpolubiec"
@@ -32,9 +30,7 @@
           /></a>
         </div>
       </div>
-      <div id="main">
-        {{ content }}
-      </div>
+      {{ content }}
       <!-- <div id="footer">
         <a href="https://icons8.com/icon/84888/linkedin"
           >LinkedIn icon by Icons8</a

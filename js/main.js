@@ -27,7 +27,7 @@ $(document).ready(function () {
       url: 'https://marbl-furniture.firebaseapp.com/',
     },
   }
-  var projectContainer = $('#projects')
+  var projectContainer = $('#project-container')
   function displayTitle() {
     this.children[1].style.visibility = 'visible'
     // this.style.filter = 'brightness(40%)'
