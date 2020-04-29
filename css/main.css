@@ -251,6 +251,7 @@ button#contact {
   }
   #project-container {
     overflow-x: scroll;
+    max-height: 21rem;
   }
   #resume-container {
     padding: 0;
@@ -265,6 +266,7 @@ button#contact {
   .skill-section .list {
     width: unset;
     height: unset;
+    min-height: 4.5rem;
     flex-direction: row;
   }
   .skill-section .list * {
@@ -278,7 +280,7 @@ button#contact {
 }
 
 @media only screen and (max-width: 515px) {
-  #resume-container{
+  #resume-container {
     width: unset;
   }
 }
