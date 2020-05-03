@@ -26,6 +26,10 @@ $(document).ready(function () {
       title: 'Marbl Furniture',
       url: 'https://marbl-furniture.firebaseapp.com/',
     },
+    blog: {
+      title: 'Travel Blog',
+      url: 'https://nola-for-days.herokuapp.com',
+    },
   }
   var projectContainer = $('#project-container')
   function displayTitle() {
