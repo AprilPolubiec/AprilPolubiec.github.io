@@ -37,9 +37,18 @@ body {
   font-family: 'Open Sans', 'sans-serif';
 }
 
+body {
+  padding-bottom: 7rem;
+}
+
 button {
   outline: none;
   border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
 }
 
 a {
@@ -96,6 +105,7 @@ img.accent {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 1s ease-in-out;
 }
 
 #hero-text {
@@ -212,13 +222,18 @@ img.accent {
   }
 }
 
+.search {
+  display: flex;
+  position: relative;
+}
+
 #searchbar {
   padding: 1rem 0;
   border: none;
   background: var(--grey);
   text-align: center;
-  margin: 3rem auto;
   outline: none;
+  flex-grow: 1;
 }
 
 .section button {
@@ -228,6 +243,17 @@ img.accent {
   width: 130px;
   color: #fff;
   font-size: 1rem;
+  align-self: center;
+}
+
+#tags {
+  overflow: scroll;
+  height: 132px;
+  top: 45px;
+  position: absolute;
+  background: var(--grey);
+  width: 100%;
+  visibility: hidden;
 }
 
 /* END PROJECT GALLERY */
