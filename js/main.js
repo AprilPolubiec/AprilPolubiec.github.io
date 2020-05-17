@@ -1,55 +1,49 @@
 $(document).ready(function () {
-  //I dot easter egg
-  var iDot = $('#i-dot')
-  var ipaEl = $('#ipa-text')
-
-  iDot.hover(
-    function displayIpa() {
-      ipaEl.css('visibility', 'visible')
-    },
-    function hideIpa() {
-      ipaEl.css('visibility', 'hidden')
-    }
-  )
-
   //Create projects
   var projects = {
+    blog: {
+      title: 'Travel Blog',
+      url: 'https://nola-for-days.herokuapp.com',
+    },
     asciiart: {
       title: 'ASCII Art',
       url: 'https://github.com/AprilPolubiec/asciiart',
-    },
-    gameoflife: {
-      title: 'Game of Life',
-      url: 'https://github.com/AprilPolubiec/GameOfLife',
     },
     marbl: {
       title: 'Marbl Furniture',
       url: 'https://marbl-furniture.firebaseapp.com/',
     },
-    blog: {
-      title: 'Travel Blog',
-      url: 'https://nola-for-days.herokuapp.com',
+    gameoflife: {
+      title: 'Game of Life',
+      url: 'https://github.com/AprilPolubiec/GameOfLife',
+    },
+    paddleball: {
+      title: 'Paddle Ball Game',
+      url: 'https://github.com/AprilPolubiec/PaddleBallGame',
+    },
+    tictactoe: {
+      title: 'Tic Tac Toe',
+      url: 'https://github.com/AprilPolubiec/AITicTacToe',
     },
   }
-  var projectContainer = $('#project-container')
-  function displayTitle() {
-    this.children[1].style.visibility = 'visible'
-    // this.style.filter = 'brightness(40%)'
-  }
-
-  function hideTitle() {
-    this.children[1].style.visibility = 'hidden'
-  }
-
+  var projectContainer = $('#project-gallery')
+  let i = 0
+  var column
+  var row = $(`<div class='row'></div>`)
   Object.entries(projects).forEach(function renderProject([project, details]) {
+    console.log(i)
+    if (i % 4 === 0) {
+      //start new column
+      column = $(`<div class='column'></div>`)
+    }
     var projectEl = $(`<a href=${details.url}></a>`).addClass('project')
     var imgEl = $('<img></img>')
     imgEl.attr('src', `../img/${project}.png`)
-    var titleEl = $('<div></div>').text(details.title)
-    var url = $(`<a href=${details.url}></a>`)
-    projectEl.append(imgEl, titleEl)
-    projectContainer.append(projectEl)
-    projectEl.hover(displayTitle, hideTitle)
+    projectEl.append(imgEl)
+    column.append(projectEl)
+    row.append(column)
+    projectContainer.append(row)
+    i += 1
   })
 
   //Create skills/resume
