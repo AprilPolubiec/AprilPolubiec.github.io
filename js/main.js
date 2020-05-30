@@ -50,6 +50,7 @@ $(document).ready(function () {
         'react-router',
         'cloud-storage',
         'css',
+        'node.js',
       ],
     },
     gameoflife: {
@@ -66,6 +67,26 @@ $(document).ready(function () {
       title: 'Tic Tac Toe',
       url: 'https://github.com/AprilPolubiec/AITicTacToe',
       tags: ['cmake', 'c++'],
+    },
+    findabook: {
+      title: 'Find Me a Book',
+      url: 'https://github.com/AprilPolubiec/book-finder',
+      tags: [
+        'javascript',
+        'html',
+        'jquery',
+        'css',
+        'firebase',
+        'firestore',
+        'google-books',
+        'cloud-functions',
+        'node.js',
+        'axios',
+        'random-words',
+        'authentication',
+        'responsive-design',
+        'css-animations'
+      ],
     },
   }
 
