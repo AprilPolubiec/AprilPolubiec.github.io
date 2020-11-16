@@ -26,47 +26,41 @@ $(document).ready(function () {
 
   //Create projects object
   var projects = {
+    soundspeller: {
+      title: 'Sound Speller',
+      url: 'https://soundspeller-c5e53.web.app/',
+      tags: [
+        'react',
+        'firebase',
+        'javascript',
+        'firestore',
+        'realtime-database',
+        'material-ui',
+        'linguistics',
+        'cloud-functions',
+        'cloud-storage',
+        'formik',
+        'lodash',
+        'speech',
+        'sweetalert',
+      ],
+    },
+    whoisrathbone: {
+      title: 'Who is Rathbone',
+      url: 'https://whoisrathbone.com/',
+      tags: [
+        'javascript',
+        'html',
+        'firebase',
+        'react',
+        'firestore',
+        'material-ui',
+      ],
+    },
     blog: {
       title: 'Travel Blog',
       url: 'https://nola-for-days.herokuapp.com',
       tags: ['javascript', 'html', 'heroku', 'jquery', 'css'],
-    },
-    asciiart: {
-      title: 'ASCII Art',
-      url: 'https://github.com/AprilPolubiec/asciiart',
-      tags: ['ruby', 'minimagick'],
-    },
-    marbl: {
-      title: 'Marbl Furniture',
-      url: 'https://marbl-furniture.firebaseapp.com/',
-      tags: [
-        'firebase',
-        'react',
-        'firestore',
-        'stripe',
-        'cloud-functions',
-        'npm',
-        'sweetalert',
-        'react-router',
-        'cloud-storage',
-        'css',
-        'node.js',
-      ],
-    },
-    gameoflife: {
-      title: 'Game of Life',
-      url: 'https://github.com/AprilPolubiec/GameOfLife',
-      tags: ['ruby', 'tests'],
-    },
-    paddleball: {
-      title: 'Paddle Ball Game',
-      url: 'https://github.com/AprilPolubiec/PaddleBallGame',
-      tags: ['python', 'tkinter'],
-    },
-    tictactoe: {
-      title: 'Tic Tac Toe',
-      url: 'https://github.com/AprilPolubiec/AITicTacToe',
-      tags: ['cmake', 'c++'],
     },
     findabook: {
       title: 'Find Me a Book',
@@ -85,8 +79,45 @@ $(document).ready(function () {
         'random-words',
         'authentication',
         'responsive-design',
-        'css-animations'
+        'css-animations',
       ],
+    },
+    marbl: {
+      title: 'Marbl Furniture',
+      url: 'https://marbl-furniture.firebaseapp.com/',
+      tags: [
+        'firebase',
+        'react',
+        'firestore',
+        'stripe',
+        'cloud-functions',
+        'npm',
+        'sweetalert',
+        'react-router',
+        'cloud-storage',
+        'css',
+        'node.js',
+      ],
+    },
+    asciiart: {
+      title: 'ASCII Art',
+      url: 'https://github.com/AprilPolubiec/asciiart',
+      tags: ['ruby', 'minimagick'],
+    },
+    tictactoe: {
+      title: 'Tic Tac Toe',
+      url: 'https://github.com/AprilPolubiec/AITicTacToe',
+      tags: ['cmake', 'c++'],
+    },
+    gameoflife: {
+      title: 'Game of Life',
+      url: 'https://github.com/AprilPolubiec/GameOfLife',
+      tags: ['ruby', 'tests'],
+    },
+    paddleball: {
+      title: 'Paddle Ball Game',
+      url: 'https://github.com/AprilPolubiec/PaddleBallGame',
+      tags: ['python', 'tkinter'],
     },
   }
 
@@ -100,7 +131,7 @@ $(document).ready(function () {
       //start new column
       column = $(`<div class='column'></div>`)
     }
-    var projectEl = $(`<a href=${details.url}></a>`).addClass('project')
+    var projectEl = $(`<a href=${details.url} target='_blank'></a>`).addClass('project')
     var imgEl = $('<img></img>')
     imgEl.attr('src', `../img/${project}.png`)
     projectEl.append(imgEl)
