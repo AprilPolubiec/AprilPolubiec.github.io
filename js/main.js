@@ -131,7 +131,9 @@ $(document).ready(function () {
       //start new column
       column = $(`<div class='column'></div>`)
     }
-    var projectEl = $(`<a href=${details.url} target='_blank'></a>`).addClass('project')
+    var projectEl = $(`<a href=${details.url} target='_blank'></a>`).addClass(
+      'project'
+    )
     var imgEl = $('<img></img>')
     imgEl.attr('src', `../img/${project}.png`)
     projectEl.append(imgEl)
@@ -244,4 +246,75 @@ $(document).ready(function () {
   //   skillSection.append(titleEl, listEl)
   //   resumeContainer.append(skillSection)
   // })
+
+  // Add holiday b corp PSA
+  var otherContainer = $('#other')
+
+  var slideshowEl = $('<div class="slideshow"></div>')
+
+  function plusDivs(n) {
+    showDivs((slideIndex += n))
+  }
+
+  function showDivs(n) {
+    var i
+    var x = document.getElementsByClassName('slide')
+    if (n > x.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+      slideIndex = x.length
+    }
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = 'none'
+    }
+    x[slideIndex - 1].style.display = 'block'
+  }
+
+  for (let i = 0; i < 8; ++i) {
+    imgEl = $('<img class="slide"></img>')
+    imgEl.attr('src', `../img/holiday-psa/${i + 1}.png`)
+    slideshowEl.append(imgEl)
+  }
+
+  var rightSlideshowButton = $('<button class="right-ss-btn">&#10095;</button>')
+
+  rightSlideshowButton.on('click', function () {
+    plusDivs(1)
+  })
+
+  var leftSlideshowButton = $('<button class="left-ss-btn">&#10094;</button>')
+  leftSlideshowButton.on('click', function () {
+    plusDivs(-1)
+  })
+
+  slideshowEl.append(rightSlideshowButton)
+  slideshowEl.append(leftSlideshowButton)
+  otherContainer.append(slideshowEl)
+  var slideIndex = 1
+  showDivs(slideIndex)
+
+  // Add bcorp buttons
+  const BCORP_LINKS = [
+    {
+      title: 'US Apparel',
+      url:
+        'https://bcorporation.net/directory?search=&industry=Apparel%2C%20Footwear%20%26%20Accessories&country=United%20States&state=&city=',
+    },
+    {
+      title: 'International Apparel',
+      url:
+        'https://bcorporation.net/directory?search=&industry=Apparel%2C%20Footwear%20%26%20Accessories&country=&state=&city=',
+    },
+    {
+      title: 'US Bookstores',
+      url:
+        'https://bcorporation.net/directory?search=&industry=Books%20%26%20Media&country=United%20States&state=&city=',
+    },
+    {
+      title: 'International Bookstores',
+      url:
+        'https://bcorporation.net/directory?search=&industry=Books%20%26%20Media&country=&state=&city=',
+    },
+  ]
 })

@@ -136,7 +136,8 @@ img.accent {
 
 .speech-bubble h2,
 #project-gallery h2,
-#resume h2 {
+#resume h2,
+#other h2 {
   position: absolute;
   left: -36px;
   top: -37px;
@@ -262,4 +263,34 @@ img.accent {
   background-color: var(--grey);
   position: relative;
   padding: 3rem 0;
+}
+
+/* OTHER */
+
+#other {
+  position: relative;
+  padding: 3rem 0;
+}
+
+.slideshow {
+  position: relative;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+}
+
+button.right-ss-btn {
+  position: absolute;
+  top: 40%;
+  right: -50px;
+  width: 50px;
+}
+
+button.left-ss-btn {
+  position: absolute;
+  top: 40%;
+  left: -50px;
+  width: 50px;
 }
