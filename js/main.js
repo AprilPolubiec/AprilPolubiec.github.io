@@ -252,6 +252,7 @@ $(document).ready(function () {
 
   var slideshowEl = $('<div class="slideshow"></div>')
 
+  var slideIndex = 1
   function plusDivs(n) {
     showDivs((slideIndex += n))
   }
@@ -291,7 +292,6 @@ $(document).ready(function () {
   slideshowEl.append(rightSlideshowButton)
   slideshowEl.append(leftSlideshowButton)
   otherContainer.append(slideshowEl)
-  var slideIndex = 1
   showDivs(slideIndex)
 
   // Add bcorp buttons
@@ -317,4 +317,13 @@ $(document).ready(function () {
         'https://bcorporation.net/directory?search=&industry=Books%20%26%20Media&country=&state=&city=',
     },
   ]
+
+  var bcorpLinksContainer = $('<div id="bcorp-links"></div>')
+  var bcorpLinksHeader = $('<h4>B Corp Directory Quick Links</h4>')
+  bcorpLinksContainer.append(bcorpLinksHeader)
+  BCORP_LINKS.forEach(link => {
+    var bcorpBtnEl = $(`<a href="${link.url}" target="_blank">${link.title}</a>`)
+    bcorpLinksContainer.append(bcorpBtnEl)
+  })
+  otherContainer.append(bcorpLinksContainer)
 })

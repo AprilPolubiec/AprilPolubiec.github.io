@@ -272,6 +272,15 @@ img.accent {
   padding: 3rem 0;
 }
 
+#other a {
+  background: var(--grey);
+  padding: 1rem;
+}
+
+#other a:hover {
+  filter: brightness(0.9);
+}
+
 .slideshow {
   position: relative;
 }
@@ -293,4 +302,15 @@ button.left-ss-btn {
   top: 40%;
   left: -50px;
   width: 50px;
+}
+
+#bcorp-links {
+  display: flex;
+  flex-direction: column;
+}
+
+#bcorp-links h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
