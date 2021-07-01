@@ -26,6 +26,11 @@ $(document).ready(function () {
 
   //Create projects object
   var projects = {
+    trivia: {
+      title: 'Trivia',
+      url: 'https://trivia-b67e1.web.app/',
+      tags: [],
+    },
     soundspeller: {
       title: 'Sound Speller',
       url: 'https://soundspeller-c5e53.web.app/',
@@ -64,7 +69,7 @@ $(document).ready(function () {
     },
     findabook: {
       title: 'Find Me a Book',
-      url: 'https://github.com/AprilPolubiec/book-finder',
+      url: 'https://find-me-a-book.web.app/',
       tags: [
         'javascript',
         'html',
@@ -123,24 +128,14 @@ $(document).ready(function () {
 
   //Fill projects gallery
   var projectContainer = $('#project-gallery')
-  let i = 0
-  var column
-  var row = $(`<div class='row'></div>`)
   Object.entries(projects).forEach(function renderProject([project, details]) {
-    if (i % 4 === 0) {
-      //start new column
-      column = $(`<div class='column'></div>`)
-    }
     var projectEl = $(`<a href=${details.url} target='_blank'></a>`).addClass(
       'project'
     )
     var imgEl = $('<img></img>')
     imgEl.attr('src', `../img/${project}.png`)
     projectEl.append(imgEl)
-    column.append(projectEl)
-    row.append(column)
-    projectContainer.append(row)
-    i += 1
+    projectContainer.append(projectEl)
   })
 
   // //Set autofill options in searchbar
@@ -248,82 +243,82 @@ $(document).ready(function () {
   // })
 
   // Add holiday b corp PSA
-  var otherContainer = $('#other')
+  // var otherContainer = $('#other')
 
-  var slideshowEl = $('<div class="slideshow"></div>')
+  // var slideshowEl = $('<div class="slideshow"></div>')
 
-  var slideIndex = 1
-  function plusDivs(n) {
-    showDivs((slideIndex += n))
-  }
+  // var slideIndex = 1
+  // function plusDivs(n) {
+  //   showDivs((slideIndex += n))
+  // }
 
-  function showDivs(n) {
-    var i
-    var x = document.getElementsByClassName('slide')
-    if (n > x.length) {
-      slideIndex = 1
-    }
-    if (n < 1) {
-      slideIndex = x.length
-    }
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = 'none'
-    }
-    x[slideIndex - 1].style.display = 'block'
-  }
+  // function showDivs(n) {
+  //   var i
+  //   var x = document.getElementsByClassName('slide')
+  //   if (n > x.length) {
+  //     slideIndex = 1
+  //   }
+  //   if (n < 1) {
+  //     slideIndex = x.length
+  //   }
+  //   for (i = 0; i < x.length; i++) {
+  //     x[i].style.display = 'none'
+  //   }
+  //   x[slideIndex - 1].style.display = 'block'
+  // }
 
-  for (let i = 0; i < 8; ++i) {
-    imgEl = $('<img class="slide"></img>')
-    imgEl.attr('src', `../img/holiday-psa/${i + 1}.png`)
-    slideshowEl.append(imgEl)
-  }
+  // for (let i = 0; i < 8; ++i) {
+  //   imgEl = $('<img class="slide"></img>')
+  //   imgEl.attr('src', `../img/holiday-psa/${i + 1}.png`)
+  //   slideshowEl.append(imgEl)
+  // }
 
-  var rightSlideshowButton = $('<button class="right-ss-btn">&#10095;</button>')
+  // var rightSlideshowButton = $('<button class="right-ss-btn">&#10095;</button>')
 
-  rightSlideshowButton.on('click', function () {
-    plusDivs(1)
-  })
+  // rightSlideshowButton.on('click', function () {
+  //   plusDivs(1)
+  // })
 
-  var leftSlideshowButton = $('<button class="left-ss-btn">&#10094;</button>')
-  leftSlideshowButton.on('click', function () {
-    plusDivs(-1)
-  })
+  // var leftSlideshowButton = $('<button class="left-ss-btn">&#10094;</button>')
+  // leftSlideshowButton.on('click', function () {
+  //   plusDivs(-1)
+  // })
 
-  slideshowEl.append(rightSlideshowButton)
-  slideshowEl.append(leftSlideshowButton)
-  otherContainer.append(slideshowEl)
-  showDivs(slideIndex)
+  // slideshowEl.append(rightSlideshowButton)
+  // slideshowEl.append(leftSlideshowButton)
+  // otherContainer.append(slideshowEl)
+  // showDivs(slideIndex)
 
-  // Add bcorp buttons
-  const BCORP_LINKS = [
-    {
-      title: 'US Apparel',
-      url:
-        'https://bcorporation.net/directory?search=&industry=Apparel%2C%20Footwear%20%26%20Accessories&country=United%20States&state=&city=',
-    },
-    {
-      title: 'International Apparel',
-      url:
-        'https://bcorporation.net/directory?search=&industry=Apparel%2C%20Footwear%20%26%20Accessories&country=&state=&city=',
-    },
-    {
-      title: 'US Bookstores',
-      url:
-        'https://bcorporation.net/directory?search=&industry=Books%20%26%20Media&country=United%20States&state=&city=',
-    },
-    {
-      title: 'International Bookstores',
-      url:
-        'https://bcorporation.net/directory?search=&industry=Books%20%26%20Media&country=&state=&city=',
-    },
-  ]
+  // // Add bcorp buttons
+  // const BCORP_LINKS = [
+  //   {
+  //     title: 'US Apparel',
+  //     url:
+  //       'https://bcorporation.net/directory?search=&industry=Apparel%2C%20Footwear%20%26%20Accessories&country=United%20States&state=&city=',
+  //   },
+  //   {
+  //     title: 'International Apparel',
+  //     url:
+  //       'https://bcorporation.net/directory?search=&industry=Apparel%2C%20Footwear%20%26%20Accessories&country=&state=&city=',
+  //   },
+  //   {
+  //     title: 'US Bookstores',
+  //     url:
+  //       'https://bcorporation.net/directory?search=&industry=Books%20%26%20Media&country=United%20States&state=&city=',
+  //   },
+  //   {
+  //     title: 'International Bookstores',
+  //     url:
+  //       'https://bcorporation.net/directory?search=&industry=Books%20%26%20Media&country=&state=&city=',
+  //   },
+  // ]
 
-  var bcorpLinksContainer = $('<div id="bcorp-links"></div>')
-  var bcorpLinksHeader = $('<h4>B Corp Directory Quick Links</h4>')
-  bcorpLinksContainer.append(bcorpLinksHeader)
-  BCORP_LINKS.forEach(link => {
-    var bcorpBtnEl = $(`<a href="${link.url}" target="_blank">${link.title}</a>`)
-    bcorpLinksContainer.append(bcorpBtnEl)
-  })
-  otherContainer.append(bcorpLinksContainer)
+  // var bcorpLinksContainer = $('<div id="bcorp-links"></div>')
+  // var bcorpLinksHeader = $('<h4>B Corp Directory Quick Links</h4>')
+  // bcorpLinksContainer.append(bcorpLinksHeader)
+  // BCORP_LINKS.forEach(link => {
+  //   var bcorpBtnEl = $(`<a href="${link.url}" target="_blank">${link.title}</a>`)
+  //   bcorpLinksContainer.append(bcorpBtnEl)
+  // })
+  // otherContainer.append(bcorpLinksContainer)
 })
