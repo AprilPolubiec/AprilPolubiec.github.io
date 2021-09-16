@@ -33,7 +33,7 @@ $(document).ready(function () {
     },
     soundspeller: {
       title: 'Sound Speller',
-      url: 'https://soundspeller-c5e53.web.app/',
+      url: 'https://dev-soundspeller.web.app/',
       tags: [
         'react',
         'firebase',
